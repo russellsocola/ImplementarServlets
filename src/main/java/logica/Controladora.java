@@ -19,4 +19,12 @@ public class Controladora {
         controladoraPersis.borrarUsuario(id_eliminar);
     
     }
+
+    public Usuario traerUsuario(int id_editar) {
+        return controladoraPersis.traerUsuario(id_editar);
+    }
+
+    public void editarUsuario(Usuario usu) {
+        controladoraPersis.editarUsuario(usu);
+    }
 }

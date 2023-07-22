@@ -27,5 +27,12 @@
             <p><label>ID:</label><input type="text" name="id_usuario"></p>
             <button type="submit">Eliminar Usuarios</button>
         </form>
+        
+        <h1>Editar Usuario</h1>
+        <p>Ingrese el Id del Usuario que desea Editar</p>
+        <form action="SvEditar" method="GET">
+            <p><label>ID:</label><input type="text" name="id_usuarioEdit"></p>
+            <button type="submit">Editar Usuarios</button>
+        </form>
     </body>
 </html>
