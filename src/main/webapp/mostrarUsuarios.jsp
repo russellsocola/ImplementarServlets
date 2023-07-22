@@ -21,7 +21,9 @@
         <p>APELLIDO :<%=usu.getApellido()%></p>
         <p>TELEFONO :<%=usu.getTelefono()%></p>
         <p>-------------------------------------</p>
+        
         <% cont=cont+1; %>
         <%}%>
+        <form action="SvUsuarios" method="GET"><button type="submit">Actualizar</button></form>
     </body>
 </html>

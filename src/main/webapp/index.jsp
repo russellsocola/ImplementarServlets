@@ -20,6 +20,5 @@
         <form action="SvUsuarios" method="GET">
             <button type="submit">Mostrar Usuarios</button>
         </form>
-    
     </body>
 </html>

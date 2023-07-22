@@ -10,10 +10,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import logica.Controladora;
 import logica.Usuario;
 
 @WebServlet(name = "SvUsuarios", urlPatterns = {"/SvUsuarios"})
 public class SvUsuarios extends HttpServlet {
+    Controladora control = new Controladora();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -25,10 +27,8 @@ public class SvUsuarios extends HttpServlet {
             throws ServletException, IOException {
         
         List<Usuario> listaUsuarios = new ArrayList<>();
-        listaUsuarios.add(new Usuario("751","Russell","Socola","985289"));
-        listaUsuarios.add(new Usuario("7519","Nahum","Reyes","9852896"));
-        listaUsuarios.add(new Usuario("75198","Socola","Russell","985289678"));
-        listaUsuarios.add(new Usuario("751986","Reyes","Nahum","9852896787"));
+        listaUsuarios = control.traerUsuarios();
+        
         
         HttpSession misesion = request.getSession();
         misesion.setAttribute("listaUsuarios", listaUsuarios);
@@ -45,10 +45,14 @@ public class SvUsuarios extends HttpServlet {
         String apellido = request.getParameter("apellido");
         String telefono= request.getParameter("telefono");
         
-        System.out.println("El dni es : "+ dni);
-        System.out.println("El nombre es : "+ nombre);
-        System.out.println("El apellido es : "+ apellido);
-        System.out.println("El telefono es : "+ telefono);
+        Usuario usu= new Usuario();
+        usu.setDni(dni);
+        usu.setNombre(nombre);
+        usu.setApellido(apellido);
+        usu.setTelefono(telefono);
+        
+        control.crearUsuario(usu);
+        response.sendRedirect("index.jsp");
     }
 
     
