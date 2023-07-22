@@ -16,6 +16,7 @@
             for(Usuario usu : listaUsuarios){
         %>
         <p><b>Usuario N° <%=cont%></b></p>
+        <p>ID :<%=usu.getId()%></p>
         <p>DNI :<%=usu.getDni() %></p>
         <p>NOMBRE :<%=usu.getNombre() %></p>
         <p>APELLIDO :<%=usu.getApellido()%></p>
